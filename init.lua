@@ -19,8 +19,7 @@ Meta.GUI_FOLDER = script.Storage:WaitForChild("GUI")
 Meta.WIDGET_FOLDER = Meta.GUI_FOLDER:WaitForChild("Widget")
 Meta.SCREEN_FOLDER = Meta.GUI_FOLDER:WaitForChild("Screen")
 
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Signal = require(ReplicatedStorage.Packages.Signal)
+local Signal = require(script.Parent.Parent:WaitForChild("Signal"))
 Meta.Initialized = Signal.new()
 
 Meta.Buttons = {}
