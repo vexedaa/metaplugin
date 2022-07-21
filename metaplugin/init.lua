@@ -8,7 +8,7 @@ Meta.ChangeHistoryService = game:GetService("ChangeHistoryService")
 Meta.Config = require(script:WaitForChild("Config"))
 Meta.TopAncestor = script.Parent
 
-local Packages = script:WaitForChild("Packages")
+local Packages = script:WaitForChild("Modules")
 
 Meta.Packages = {
 	Event = require(Packages:WaitForChild("Event"));
