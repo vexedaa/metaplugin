@@ -1,0 +1,248 @@
+
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+
+    {
+        "Create Knit Service": {
+            "prefix": "kService",
+            "body": [
+              "--Knit",
+              "local Knit = _G.Knit",
+              "",
+              "local ${0:$TM_FILENAME_BASE} = {Name = \"${0:$TM_FILENAME_BASE}\", Client = {}}",
+              "",
+              "--API Services",
+              "",
+              "--Dependencies",
+              "",
+              "--Variables",
+              "",
+              "function ${0:$TM_FILENAME_BASE}:KnitStart()",
+              "$0",
+              "end",
+              "",
+              "",
+              "return ${0:$TM_FILENAME_BASE}",
+              ""
+            ],
+            "description": "Create Knit Service"
+          },
+          "Create Knit Controller": {
+            "prefix": "kController",
+            "body": [
+              "--Knit",
+              "local Knit = _G.Knit",
+              "",
+              "local ${0:$TM_FILENAME_BASE} = {Name = \"${0:$TM_FILENAME_BASE}\"}",
+              "",
+              "--API Services",
+              "local Players = game:GetService(\"Players\")",
+              "",
+              "--Dependencies",
+              "",
+              "--Variables",
+              "local LocalPlayer = Players.LocalPlayer",
+              "",
+              "function ${0:$TM_FILENAME_BASE}:KnitStart()",
+              "$0",
+              "end",
+              "",
+              "",
+              "return ${0:$TM_FILENAME_BASE}",
+              ""
+            ],
+            "description": "Create Knit Controller"
+          },
+          "Get Fusion": {
+            "prefix": "fusion",
+            "body": [
+              "local Fusion = require(Knit.Util.Fusion)",
+              "local New = Fusion.New",
+              "local Children = Fusion.Children ",
+              "local Spring = Fusion.Spring",
+              "local Tween = Fusion.Tween",
+              "local OnChange = Fusion.OnChange",
+              "local OnEvent = Fusion.OnEvent",
+              "local Computed = Fusion.Computed",
+              "local ComputedPairs = Fusion.ComputedPairs",
+              "local State = Fusion.State",
+              ""
+            ],
+            "description": "Get Fusion"
+          },
+          "Setup Module":{
+            "prefix": "module",
+            "body": [
+              "local ${1:Module} = {}",
+              "$0",
+              "return ${1:Module}",
+              ""
+            ],
+            "description": "Set up a basic module"
+          },
+            "New Class": {
+              "prefix": ["newclass"],
+              "body": [
+                "local ${TM_FILENAME/(.*)\\..+$/$1/} = {}",
+                "${TM_FILENAME/(.*)\\..+$/$1/}.__index = ${TM_FILENAME/(.*)\\..+$/$1/}",
+                "",
+                "function ${TM_FILENAME/(.*)\\..+$/$1/}.new(args)",
+                "\tlocal self = {}",
+                "\tsetmetatable(self, ${TM_FILENAME/(.*)\\..+$/$1/})",
+                "",
+                "\treturn self",
+                "end",
+                "",
+                "return ${TM_FILENAME/(.*)\\..+$/$1/}",
+              ],
+              "description": "Quickly create a new class.",
+            },
+          
+            "New Singleton": {
+              "prefix": ["newsingleton"],
+              "body": [
+                "local ${TM_FILENAME/(.*)\\..+$/$1/} = {}",
+                "${TM_FILENAME/(.*)\\..+$/$1/}.__index = ${TM_FILENAME/(.*)\\..+$/$1/}",
+                "",
+                "function ${TM_FILENAME/(.*)\\..+$/$1/}.new()",
+                "\tlocal self = {}",
+                "\tsetmetatable(self, ${TM_FILENAME/(.*)\\..+$/$1/})",
+                "",
+                "\treturn self",
+                "end",
+                "",
+                "local Singleton = ${TM_FILENAME/(.*)\\..+$/$1/}.new()",
+                "return Singleton",
+              ],
+              "description": "Quickly create a new singleton.",
+            },
+
+            "New Class Function": {
+              "prefix": ["classfunction"],
+              "body": [
+                "function ${0:$TM_FILENAME_BASE}:",
+                "\t",
+                "end"
+              ]
+            },
+          
+            "Knit Service": {
+              "prefix": ["knitservice"],
+              "body": [
+                "local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")",
+                "local Knit = require(ReplicatedStorage.Packages.Knit)",
+                "",
+                "local ${0:$TM_FILENAME_BASE} = Knit.CreateService {",
+                "\tName = \"${0:$TM_FILENAME_BASE}\",",
+                "\tClient = {},",
+                "}",
+                "",
+                "",
+                "--Initialize service",
+                "function ${0:$TM_FILENAME_BASE}:KnitInit()",
+                "\t",
+                "end",
+                "",
+                "",
+                "--Start service",
+                "function ${0:$TM_FILENAME_BASE}:KnitStart()",
+                "\t",
+                "end",
+                "",
+                "",
+                "return ${0:$TM_FILENAME_BASE}",
+                ""
+              ],
+              "description": "Knit Service template"
+            },
+          
+            "Knit Controller": {
+              "prefix": ["knitcontroller"],
+              "body": [
+                "local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")",
+                "local Knit = require(ReplicatedStorage.Packages.Knit)",
+                "",
+                "local ${0:$TM_FILENAME_BASE} = Knit.CreateController { Name = \"${0:$TM_FILENAME_BASE}\" }",
+                "",
+                "",
+                "--Initialize controller",
+                "function ${0:$TM_FILENAME_BASE}:KnitInit()",
+                "\t",
+                "end",
+                "",
+                "",
+                "--Start controller",
+                "function ${0:$TM_FILENAME_BASE}:KnitStart()",
+                "\t",
+                "end",
+                "",
+                "",
+                "return ${0:$TM_FILENAME_BASE}",
+                ""
+              ],
+              "description": "Knit Controller template"
+            },
+          
+            "Knit Require": {
+              "prefix": ["knitrequire"],
+              "body": ["local ${1:Name} = require(Knit.${2:Util}.${1:Name})"],
+              "description": "Knit Require template"
+            },
+          
+            "Knit": {
+              "prefix": ["knit"],
+              "body": ["local Knit = require(ReplicatedStorage.Packages.Knit)"],
+              "description": "Require the Knit module"
+            },
+          
+            "ReplicatedStorage": {
+              "prefix": ["replicatedstorage"],
+              "body": ["local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")"]
+            },
+          
+            "Client Common Variables": {
+              "prefix": ["clientcommon"],
+              "body": [
+                "local localPlayer = game:GetService(\"Players\").LocalPlayer",
+                "local PlayerScripts = localPlayer:WaitForChild(\"PlayerScripts\")",
+              ],
+              "description": "Variables commonly used amongst client scripts and modules"
+            },
+          
+            "Roblox Service": {
+              "prefix": ["robloxservice"],
+              "body": [
+                "local $roblox_service_name = game:GetService(\"$roblox_service_name\")"
+              ],
+              "description": "Roblox Service Template"
+            },
+            "New Item Data": {
+              "prefix": ["newitemdata"],
+              "body": [
+                "Collectables[\"$item_name\"] = {",
+                  "\tName = \"$item_name\";",
+                  "\tAsset = Assets[\"$item_name\"];",
+                  "\tBaseClass = \"Collectables\";",
+                  "\tViewportZoomDistance = .85;",
+                  "\tViewportRotation = 180;",
+                  "\t--ZRotation = -.25;",
+                  "\tXRotation = -.35",
+                "}"
+              ]
+            }
+    }

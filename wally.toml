@@ -1,0 +1,14 @@
+[package]
+name = "vexedaa/metaplugin"
+description = "A springboard for easier plugin development"
+license = "gpl-3.0"
+version = "0.1.0"
+registry = "https://github.com/vexedaa/metaplugin"
+realm = "shared"
+
+[dependencies]
+Knit = "sleitnick/knit@1.1.0-rc.2"
+Promise = "evaera/promise@3.1.0"
+Profileservice = "brittonfischer/profileservice@2.1.5"
+Matter = "evaera/matter@0.5.2"
+Signal = "sleitnick/signal@1.2.0"
