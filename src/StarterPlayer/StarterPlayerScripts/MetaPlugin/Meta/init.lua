@@ -19,7 +19,9 @@ Meta.GUI_FOLDER = script.Storage:WaitForChild("GUI")
 Meta.WIDGET_FOLDER = Meta.GUI_FOLDER:WaitForChild("Widget")
 Meta.SCREEN_FOLDER = Meta.GUI_FOLDER:WaitForChild("Screen")
 
-Meta.Initialized = Meta.Packages.Event.new()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Signal = require(ReplicatedStorage.Packages.Signal)
+Meta.Initialized = Signal.new()
 
 Meta.Buttons = {}
 Meta.Widgets = {}
@@ -43,7 +45,7 @@ end
 
 Meta.AddButton = function(name, tooltip, icon)
 	local button = Meta.Toolbar:CreateButton(name, tooltip, icon)
-	local metaButton = {Button = button; Active = false; OnActivation = Meta.Packages.Event.new()}
+	local metaButton = {Button = button; Active = false; OnActivation = Signal.new()}
 	Meta.Buttons[name] = metaButton
 	return metaButton
 end
