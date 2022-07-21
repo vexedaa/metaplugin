@@ -1,4 +1,4 @@
-local plugin = nil --ModuleScripts don't have access to the `plugin` global, so we need to get that from the Controller.
+local plugin = nil --ModuleScripts don't have access to the `plugin` global. It must be provided by a script that initializes MetaPlugin.
 
 local Meta = {}
 
