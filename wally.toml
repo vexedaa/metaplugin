@@ -2,7 +2,7 @@
 name = "vexedaa/metaplugin"
 description = "A springboard for easier plugin development"
 license = "gpl-3.0"
-version = "0.5.2"
+version = "0.5.3"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 

@@ -19,7 +19,7 @@ Meta.GUI_FOLDER = script.Storage:WaitForChild("GUI")
 Meta.WIDGET_FOLDER = Meta.GUI_FOLDER:WaitForChild("Widget")
 Meta.SCREEN_FOLDER = Meta.GUI_FOLDER:WaitForChild("Screen")
 
-local Signal = require(script.Parent.Parent:WaitForChild("Signal"))
+local Signal = require(script.Parent:WaitForChild("Signal"))
 Meta.Initialized = Signal.new()
 
 Meta.Buttons = {}
