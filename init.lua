@@ -57,6 +57,7 @@ end
 
 Meta.Initialize = function(pluginGlobal)
 	plugin = pluginGlobal
+	Meta.Plugin = plugin
 	Meta.Toolbar = plugin:CreateToolbar(Meta.Config.PluginName)
 	
 	for name, widgetConfig in pairs(Meta.Config.Widgets) do
