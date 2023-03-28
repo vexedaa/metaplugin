@@ -49,6 +49,10 @@ Meta.AddButton = function(name, tooltip, icon)
 	return metaButton
 end
 
+function Meta:GetButton(name)
+	return self.Buttons[name]
+end
+
 Meta.ToggleActive = function(button, active)
 	button.Active = active
 	button.Button:SetActive(active)
