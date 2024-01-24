@@ -2,9 +2,11 @@
 name = "vexedaa/metaplugin"
 description = "A springboard for easier plugin development"
 license = "gpl-3.0"
-version = "0.5.3"
+version = "1.9.0"
 registry = "https://github.com/vexedaa/wally-index"
 realm = "shared"
 
 [dependencies]
-Signal = "sleitnick/signal@1.2.0"
+promise = "evaera/promise@4.0.0"
+Signal = "sleitnick/signal@2.0.1"
+testez = "roblox/testez@0.4.1"
